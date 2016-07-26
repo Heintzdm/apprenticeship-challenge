@@ -1,8 +1,21 @@
-import React from 'react';
-import Note from './Note.jsx';
+import React, { Component } from 'react';
+// import Note from './Note.jsx';
 
-export default class App extends React.Component {
+class App extends Component{
+
+  constructor(props){
+    super(props);
+
+  }
+
   render() {
-    return <Note />;
+    return (
+      <div>{this.props.list[0].name}</div>
+    )
   }
 }
+
+
+
+
+export default App
