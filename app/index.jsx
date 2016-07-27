@@ -1,7 +1,7 @@
 import './main.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import MainTemp from './components/maintemp';
 
 // Resources
 // [grocerylists] - A collection of the created lists
@@ -48,5 +48,13 @@ const groceryList = [
   },
 ]
 
+//set up router here
+ReactDOM.render(
+                <MainTemp>
+                  {/*<GroceryList>
 
-ReactDOM.render(<App list={groceryList} />, document.getElementById('app'));
+                  </GroceryList>*/}
+                </MainTemp>
+
+
+  , document.getElementById('app'));
