@@ -2,6 +2,7 @@ import './main.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MainTemp from './components/maintemp';
+import GroceryList from './components/grocerylist';
 
 // Resources
 // [grocerylists] - A collection of the created lists
@@ -51,9 +52,9 @@ const groceryList = [
 //set up router here
 ReactDOM.render(
                 <MainTemp>
-                  {/*<GroceryList>
+                  <GroceryList lists={groceryList}>
 
-                  </GroceryList>*/}
+                  </GroceryList>
                 </MainTemp>
 
 
