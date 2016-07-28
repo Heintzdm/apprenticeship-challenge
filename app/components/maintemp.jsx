@@ -16,7 +16,7 @@ class MainTemp extends Component{
     return (
       <div>
         <header className="nav">
-          <h3>Grocery List Maker!</h3>
+          <h3><Link to='/lists'>Grocery List Maker!</Link></h3>
           <h2>By: <a href="https://github.com/Heintzdm" target="blank">Dan Heintzelman</a></h2>
         </header>
         <main>
