@@ -1,37 +1,32 @@
 import React, { Component } from 'react';
 import GroceryListItem from './grocerylistitem';
 
-class GroceryList extends Component {
-  constructor(props){
-    super(props)
+// class GroceryList extends Component {
+//   constructor(props){
+//     super(props)
+//
+//
+//
+//   }
+  //
+  //
+  // componentDidMount() {
+  //   console.log(this.props.lists)
+  //
+  //
+  // }
 
-    // this.state = {
-    //   lists: this.props.lists
-    // }
-
-
-  }
-
-
-  componentDidMount() {
-    console.log(this.props.lists)
-
-
-  }
-
-  render() {
+  const GroceryList = (props) => {
     var counter = 0;
-    const Collection = this.props.lists.map((list) => {
-
+    const Collection = props.lists.map((list) => {
       return (
             <GroceryListItem
               key={++counter}
               name={list.name}
               items={list.items.length}
             />
-      )
-
-    })
+      );
+    });
 
     return (
       <ul>
@@ -39,7 +34,6 @@ class GroceryList extends Component {
       </ul>
     )
   }
-}
 
 
 export default GroceryList

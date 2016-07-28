@@ -8,9 +8,6 @@ class MainTemp extends Component{
   constructor(props){
     super(props);
 
-    this.state = {
-      lists: this.props.lists,
-    }
   }
 
 
