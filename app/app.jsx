@@ -1,8 +1,8 @@
 import './main.css';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, {Component} from 'react';
 import MainTemp from './components/maintemp';
 import GroceryList from './components/grocerylist';
+import {Router, Route, Link, hashHistory} from 'react-router';
 
 // Resources
 // [grocerylists] - A collection of the created lists
@@ -50,12 +50,22 @@ const groceryList = [
 ]
 
 //set up router here
-ReactDOM.render(
-                <MainTemp>
-                  <GroceryList lists={groceryList}>
 
-                  </GroceryList>
-                </MainTemp>
+class App extends Component {
+  constructor(props){
+    super(props);
 
+  }
 
-  , document.getElementById('app'));
+  render() {
+    return (
+      <Router history={ hashHistory }>
+        <Route path="/" component={MainTemp}>
+        </Route>
+      </Router>
+    )
+  }
+
+}
+
+export default App
