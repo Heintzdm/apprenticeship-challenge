@@ -56,11 +56,15 @@ const GroceryListWrapper = ()=> {
   )
 }
 // Using wrapper to pass grocery list to both children components as props
-// The downside is I have to pass params through props or else they get lost
+
+
+// Grab list ID from params and use to pass correct list to show page
+// Will need to refactor to make an API call to grab correct list
+
 const ListShowWrapper = (props) => {
 
   return (
-    <ListShow lists ={groceryList} params={props.params} />
+    <ListShow list ={groceryList[props.params.listid]}  />
   )
 }
 
