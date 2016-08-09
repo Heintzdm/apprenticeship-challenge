@@ -14,6 +14,7 @@ import {Router, Route, Link, hashHistory} from 'react-router';
               items={list.items.length}
             />
           </Link>
+        
       );
     });
 
