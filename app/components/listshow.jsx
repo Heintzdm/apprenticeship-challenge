@@ -6,8 +6,8 @@ class ListShow extends Component {
   }
 
   render(){
-    const listid = this.props.params.listid
-    const list = this.props.lists[listid]
+    // const listid = this.props.params.listid
+    const list = this.props.list
     return (
       <div className="listShow">
         <h2>{list.name}</h2>

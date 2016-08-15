@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import MainTemp from './components/maintemp';
 import GroceryList from './components/grocerylist';
 import ListShow from './components/listshow';
+import ListNew from './components/listnew';
 import {Router, Route, Link, hashHistory} from 'react-router';
 
 // Resources
@@ -52,16 +53,23 @@ const groceryList = [
 // Using wrapper to pass grocery list to both children components as props
 const GroceryListWrapper = ()=> {
   return (
-    <GroceryList lists = {groceryList} />
+    <div>
+      <Link to="/lists/new" className="newlist">Create a list!</Link>
+      <GroceryList lists = {groceryList} />
+    </div>
   )
 }
 // Using wrapper to pass grocery list to both children components as props
-// The downside is I have to pass params through props or else they get lost
+
+
+// Grab list ID from params and use to pass correct list to show page
+// Will need to refactor to make an API call to grab correct list
+
 const ListShowWrapper = (props) => {
 
   return (
-    <ListShow lists ={groceryList} params={props.params} />
-  )
+    <ListShow list ={groceryList[props.params.listid]}  />
+  );
 }
 
 class App extends Component {
@@ -75,6 +83,8 @@ class App extends Component {
       <Router history={ hashHistory }>
         <Route path="/" component={MainTemp}>
           <Route path="/lists" component={GroceryListWrapper}>
+          </Route>
+          <Route path="/lists/new" component={ListNew}>
           </Route>
           <Route path="/lists/:listid" component={ListShowWrapper}>
           </Route>
